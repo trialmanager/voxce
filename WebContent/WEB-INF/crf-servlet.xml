@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/" p:suffix=".jsp" />
+
+	<bean id="myCRFImplementation" class="com.Voxce.DAO.CRFDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myCRFLaboratoryImplementation" class="com.Voxce.DAO.LaboratoryDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myCRFLabsImplementation" class="com.Voxce.DAO.LabsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+
+	<bean id="myCRFDrugsImplementation" class="com.Voxce.DAO.DrugsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myCRFunitsOfMeasureImplementation" class="com.Voxce.DAO.UnitsOfMeasureDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+					/ShowCRFIndex.crf = crfMultiController
+					/createQuestion.crf = crfMultiController
+					/deleteQuestion.crf = crfMultiController
+					/ShowEditQuestion.crf = crfMultiController
+					/editQuestion.crf = crfMultiController
+					/ShowCRFSection.crf = crfMultiController
+					/createSection.crf = crfMultiController
+					/deleteSection.crf = crfMultiController
+					/ShowEditSection.crf = crfMultiController
+					/editSection.crf = crfMultiController
+					/ShowCRFPage.crf = crfMultiController
+					/createCRF.crf = crfMultiController
+					/deleteCrf.crf = crfMultiController
+					/editCRF.crf = crfMultiController
+					/ShowEditCrf.crf = crfMultiController
+					
+			</value>
+		</property>
+	</bean> 
+	
+	<bean name="crfMultiController" class="com.Voxce.Controllers.crfController">
+		<property name="crfDao" ref="myCRFImplementation" />
+		<property name="laboratoryDAO" ref="myCRFLaboratoryImplementation" />
+		<property name="labsDao" ref="myCRFLabsImplementation" />	
+		<property name="drugsDAO" ref="myCRFDrugsImplementation" />
+		<property name="unitsOfMeasureDAO" ref = "myCRFunitsOfMeasureImplementation" />
+	</bean>
+
+
+</beans>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/study/" p:suffix=".jsp" />
+	
+	<bean id="myPaymentImplementation" class="com.Voxce.DAO.PaymentDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myPaymentCodeImplementation" class="com.Voxce.DAO.PaymentCodeDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myPaymentScheduleImplementation" class="com.Voxce.DAO.PaymentScheduleDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myStudyListImplementation" class="com.Voxce.DAO.StudiesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="mySiteListImplementation" class="com.Voxce.DAO.SitesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myVisitsListImplementation" class="com.Voxce.DAO.VisitNameTextsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myCRFListImplementation" class="com.Voxce.DAO.CrfNameTextsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myUsersListImplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myStudyPaymentListImplementation" class="com.Voxce.DAO.StudyPaymentDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myPatientPaymentListImplementation" class="com.Voxce.DAO.PatientPaymentDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myVisitListImplementation" class="com.Voxce.DAO.VisitsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	
+	<!--  This is implementation class where the business logic developed -->
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/ShowPayments.pay = paymentMultiController
+				/newPaymentschedule.pay = paymentMultiController
+				/newPaymentCode.pay = paymentMultiController
+				/studyPayment.pay = paymentMultiController
+		 		/patientPayment.pay = paymentMultiController 
+		 		/ShowPaymentCode.pay = paymentMultiController       
+				/ShowPaymentSchedule.pay = paymentMultiController 
+				/ShowSitePayments.pay = paymentMultiController
+				/ShowSiteCRFPayments.pay = paymentMultiController
+				/HiddenActions.pay = paymentMultiController
+				/sitePayment.pay = paymentMultiController
+				/ShowCreateStudySitePayments.pay = paymentMultiController
+			</value>
+		</property>
+	</bean> 
+	
+	<bean name="paymentMultiController" class="com.Voxce.Controllers.PaymentController">
+		<property name="paymentDAO" ref="myPaymentImplementation"/>
+		<property name="paymentScheduleDAO" ref="myPaymentScheduleImplementation"/>
+		<property name="paymentCodeDAO" ref="myPaymentCodeImplementation"/>
+		<property name="studiesDAO" ref="myStudyListImplementation"/>
+		<property name="sitesDAO" ref="mySiteListImplementation"/>
+		<property name="visitNameTextsDAO" ref="myVisitsListImplementation"/>
+		<property name="crfNameTextsDAO" ref="myCRFListImplementation"/>
+		<property name="usersDAO" ref="myUsersListImplementation"/>
+		<property name="studyPaymentDAO" ref="myStudyPaymentListImplementation"/>
+		<property name="patientPaymentDAO" ref="myPatientPaymentListImplementation"/>
+		<property name="visitsDAO" ref="myVisitListImplementation"/>
+		
+	</bean>
+</beans>

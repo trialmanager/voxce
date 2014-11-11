@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ margin:0; background-color:#FFF; background-image:url(../images/header_bg.jpg); background-repeat:repeat-x}
+.wrapper{ width:100%; margin:0;}
+.internal_wrapper{ width:990px; margin:0 auto; position:relative;}
+.logo_areas{ height:97px; width:990px; margin:0 auto; position:relative;}
+.logo{ width:233px; height:91px; float:left; margin-top:7px; }
+.top_menu{ width:310px; float:right; right:270px; bottom:-1px; height:34px; position:absolute; z-index:1000;}
+.header_area{ width:6902px; height:320px; float:left;}
+
+a.logintop_btn {
+    background: transparent url('../images/loginbtn_a.png') no-repeat scroll top right;
+    color: #616161;
+    display: block;
+    float: left;
+    font: 12px Arial;
+	font-weight:normal;
+	text-align:center;
+    height: 33px;
+    margin-right: 6px;
+    padding-right: 9px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+a.logintop_btn span {
+    background: transparent url('../images/loginbtn_span.png') no-repeat;
+    display: block;text-align:center;
+    line-height: 33px;
+     padding: 0 0 0 9px;
+} 
+a.logintop_btn:hover{
+	 background-position: bottom right;text-align:center;
+    color: #fff;
+    outline: none; /* hide dotted outline in Firefox */
+}
+a.logintop_btn:hover span{
+    background-position: 0  -33px;text-align:center;
+      padding: 0 0 0 9px; /* push text down 1px */
+} 
+a.logintop_btn:active{
+    background-position: bottom right;text-align:center;
+    color: #fff;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.logintop_btn:active span{
+    background-position: bottom left;text-align:center;
+    padding: 0 0 0 9px; /* push text down 1px */
+} 
+
+.login_panel_bg{ background-image:url(../images/login_bg.png); background-repeat:no-repeat; width:283px; height:406px; position:absolute; right:0; top:62px;}
+.subscribe_area{ width:228px;  margin:0 auto; height:60px; text-align:center;}
+.login_header{width:218px;  margin:0 auto; height:70px; padding-left:10px; text-align:left; margin-top:20px;   font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:bold; color:#0a77ae; margin-bottom:5px;}
+.login_form{width:218px; height:170px;  margin:0 auto; padding-left:10px; text-align:left;}
+
+label{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#454545; margin-bottom:5px;}
+label span{ font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#ed0000;}
+input{ background-image:url(../images/login_field_bg.png); background-color:transparent; width:208px; height:32px; padding-right:3px; padding-left:3px; background-repeat:no-repeat; line-height:32px; border:solid 0; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#454545; margin-top:4px; margin-bottom:8px;}
+
+.signup_area{width:212px; height:47px;  margin:0 auto; text-align:center; margin-top:8px; }
+.forgot_pass_area{ width:130px; float:left; height:26px; line-height:26px;}
+.login_btn{ width:72px; float:right; margin-right:5px;}
+.login_button{ background-image:url(../images/login_btn.png); border:solid 0 ; width:72px; height:26px; background-repeat:no-repeat; background-color:transparent; cursor:pointer;}
+
+a.more:link{font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#04689b; text-decoration:none;}
+a.more:visited{font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#04689b; text-decoration:none;}
+a.more:active{font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#04689b; text-decoration:none;}
+a.more:hover{font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#04689b; text-decoration:underline;}
+
+.body_content{ width:955px; margin-top:29px; padding-left:11px; padding-right:24px; float:left; margin-bottom:20px;}
+.body_left{ float:left; width:700px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#7c7c7c;}
+.body_right{ float:right; width:236px; margin-top:20px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#7c7c7c;}
+.toll_bg{ background-image:url(../images/toll_bg.jpg); margin-left: -32px; background-repeat:no-repeat; width:236px; height:66px; margin-top:26px; margin-bottom:15px; text-align:center;}
+.toll_bg h1{ margin:0; padding:0;font-family:Arial, Helvetica, sans-serif; font-size:24px; font-weight:bold; color:#3086a9; text-align:center;}
+.toll_bg span{ margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:24px; color:#4a4a4a; text-align:center;}
+
+.page_heading{ height:47px; line-height:47px; width:700px; border-bottom:solid 1px #eeeeee; font-family:Arial, Helvetica, sans-serif; font-size:35px; font-weight:bold; color:#0e8dce;}
+.page_txt{ line-height:18px; margin-top:15px; width:700px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#7c7c7c;}
+
+.footers_bar{ clear:both;width:100%; height:43px; background-color:#fff; border-top:solid 7px #e8e7e7; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#9c9c9c; line-height:43px;}
+.footers_inner{ width:990px; height:43px; margin:0 auto;}
+.footer_left{ width:500px; height:43px; text-align:left; line-height:43px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#9c9c9c; margin-left:14px; float:left;}
+.footer_right{ width:200px; height:43px;text-align:right; line-height:43px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#9c9c9c; margin-right:24px; float:right;}
+
+a.flinks:link{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#9c9c9c; text-decoration:none;}
+a.flinks:visited{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#9c9c9c; text-decoration:none;}
+a.flinks:active{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#9c9c9c; text-decoration:none;}
+a.flinks:hover{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#9c9c9c; text-decoration:underline;}
+
+a.mlinks:link{ font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#5f5f5f; text-decoration:none;}
+a.mlinks:visited{ font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#5f5f5f; text-decoration:none;}
+a.mlinks:active{ font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#5f5f5f; text-decoration:none;}
+a.mlinks:hover{ font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#5f5f5f; text-decoration:underline;}
+.image_bg_email{background-image:url(../images/email_bg.png);}
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/" p:suffix=".jsp" />
+
+	<bean id="myVisitImplementation" class="com.Voxce.DAO.VisitsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myVisitImplementationCrf" class="com.Voxce.DAO.CRFDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myVisitImplementationStudies" class="com.Voxce.DAO.StudiesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+					/ShowVisitsIndex.visits = visitsMultiController
+					/createVisit.visits = visitsMultiController 
+					/deleteVisits.visits = visitsMultiController
+					/editVisit.visits = visitsMultiController
+					/ShowEditVisit.visits = visitsMultiController
+					/ShowAssignVisit.visits = visitsMultiController
+					/SaveAssignVisit.visits = visitsMultiController
+					/getVisitList.visits=visitsMultiController
+					/checkVisitName.visits=visitsMultiController
+					
+			</value>
+		</property>
+	</bean> 
+	
+	<bean name="visitsMultiController" class="com.Voxce.Controllers.VisitsController">
+		<property name="visitDao" ref="myVisitImplementation" />
+		<property name="crfDao" ref="myVisitImplementationCrf" />
+		<property name="stDao" ref="myVisitImplementationStudies" />			
+	</bean>
+	
+			
+	
+
+
+</beans>

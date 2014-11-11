@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+<!--*** Message Source Bean ***-->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages"/>		
+ 	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/jsp/" p:suffix=".jsp" />
+	
+	<bean id="internalPathMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver">
+		<property name="suffix" value="Handler"/>
+	</bean>
+		
+<!--***  DAO Mapping ***-->
+	<bean id="inventoryDAO" class="com.Voxce.DAO.InventoryDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value >
+				/inventory/showInventoryIndex.inventory = inventoryController
+				/inventory/addInventory.inventory = inventoryController
+				/inventory/listInventory.inventory = inventoryController
+				/inventory/editInventory.inventory = inventoryController
+			</value>
+		</property>
+	</bean> 
+
+<!--*** Controller Layer ***-->	
+	<bean name="inventoryController" class="com.Voxce.Controllers.InventoryController">
+		<property name="inventoryDAO" ref="inventoryDAO" />
+		<property name="methodNameResolver" ref="internalPathMethodNameResolver"/>  
+	</bean>
+	
+</beans>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+		
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/" p:suffix=".jsp" />
+	
+	<bean id="internalPathMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver">
+		<property name="suffix" value="Handler"/>
+	</bean>
+	
+	<bean id="myCountriesImplementation" class="com.Voxce.DAO.CountriesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mySitesImplementation" class="com.Voxce.DAO.SitesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mystudiesImplementation" class="com.Voxce.DAO.StudiesDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="mystudysiteImplementation" class="com.Voxce.DAO.StudySitesDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="myUsersImplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="mySponDivUserImplementation" class="com.Voxce.DAO.SponsorDivisionUserDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myLaborortoriesImplementation" class="com.Voxce.DAO.LaboratoryDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<!--  This is implementation class where the business logic developed -->
+	
+	
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				
+				/ShowSitesIndex.sites = sitesMultiController
+				/ShowSitesStudyUserIndex.sites= sitesMultiController
+				/ShowSitesUserIndex.sites= sitesMultiController
+				/ShowSitesStudyIndex.sites= sitesMultiController
+				
+				/SaveSite.sites 	  =	sitesMultiController	
+				/EditStudySite.sites  =	sitesMultiController	
+				/SaveStudySite.sites  =	sitesMultiController
+				/ChangeSiteStatus.sites = sitesMultiController
+				/SaveSiteUser.sites = sitesMultiController
+				/DeleteSitesUser.sites = sitesMultiController
+				/ReturnSiteUsers.sites = sitesMultiController
+				/SaveStudySiteuser.sites = sitesMultiController
+				/DeleteStudySitesUsers.sites = sitesMultiController
+				/GetInvestigators.sites = sitesMultiController
+				/OpenSiteIndexFromLab.sites=sitesMultiController
+				/OpenSiteLaborotoryIndex.sites=sitesMultiController
+				/StudyChangeSaveStudySiteLaborotory.sites=sitesMultiController
+				/StudySiteChangeSaveStudySiteLaborotory.sites=sitesMultiController
+				/SaveStudySiteLaborotory.sites=sitesMultiController
+				/DeleteStudySitesLaborotory.sites=sitesMultiController			
+				
+				/HiddenActions.sites =sitesMultiController
+				/CheckSite.sites=sitesMultiController
+				
+			</value>
+		</property>
+	</bean> 																			
+	
+	<bean name="sitesMultiController" class="com.Voxce.Controllers.SitesController">
+		<property name="countriesdao" ref="myCountriesImplementation" />   
+		<property name="sitesDAO" ref="mySitesImplementation" />
+		<property name="studiesdao" ref="mystudiesImplementation" />
+		<property name="studysiteDAO" ref="mystudysiteImplementation" /> 
+		<property name="usersdao" ref="myUsersImplementation" />
+		<property name="laborotoriesdao" ref="myLaborortoriesImplementation" />
+		<property name="sponsordivisionuserdao" ref="mySponDivUserImplementation" />
+	</bean>
+
+</beans>

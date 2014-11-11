@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+
+<!-- Database connection settings -->
+<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+<property name="hibernate.connection.url">jdbc:mysql://localhost/voxadmin_ereg</property>
+<property name="hibernate.connection.username">root</property>
+<property name="hibernate.connection.password">sa7toot</property> 
+
+<property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+<property name="c3p0.timeout">1800</property>
+<property name="c3p0.idleConnectionTestPeriod">5</property>
+<property name="c3p0.unreturnedConnectionTimeout">3600</property> 
+<property name="c3p0.minPoolSize">1</property> 
+<property name="c3p0.maxPoolSize">5</property> 
+<property name="c3p0.maxIdleTimeExcessConnections">300</property> 
+<property name="c3p0.maxIdleTime">3600</property> 
+<property name="c3p0.acquireIncrement">5</property>
+<property name="c3p0.preferredTestQuery">SELECT 1</property> 
+
+
+<!-- SQL dialect -->
+<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+<!-- Null Date Handler -->
+<property name="convertToNull">org.hibernate.connection.zeroDateTimeBehavior</property>	
+
+<property name="hibernate.connection.autocommit">true</property> 
+
+<!-- Enable Hibernate's automatic session context management -->
+<property name="current_session_context_class">thread</property>
+
+<!-- Disable the second-level cache -->
+<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+<!-- Echo all executed SQL to stdout -->
+<property name="hibernate.show_sql">true</property>
+<!-- <property name="hibernate.format_sql">true</property> -->
+<!-- <property name="hibernate.use_sql_comments">true</property> -->
+
+<!-- Drop and re-create the database schema on startup -->
+<property name="hbm2ddl.auto">none</property>
+
+<mapping class="com.Voxce.model.Question_Logs"/>
+<mapping class="com.Voxce.model.SitesUsers"/>
+<mapping class="com.Voxce.model.Groups"/>
+<mapping class="com.Voxce.model.Users"/>
+
+<mapping class="com.Voxce.model.Resources"/>
+<mapping class="com.Voxce.model.GroupRights"/>
+
+<mapping class="com.Voxce.model.Languages"/>
+
+<mapping class="com.Voxce.model.SponsorDevision"/>
+<mapping class="com.Voxce.model.Sponsor"/>
+<mapping class="com.Voxce.model.SponsorDevision"/>
+<mapping class="com.Voxce.model.SponsorDevisionUser"/>
+<mapping class="com.Voxce.model.Sites"/>
+<mapping class="com.Voxce.model.studies"/>
+<mapping class="com.Voxce.model.subStudies"/>
+<mapping class="com.Voxce.model.StudySites"/>
+<mapping class="com.Voxce.model.StudySiteLabroratories"/>
+<mapping class="com.Voxce.model.Patients"/>
+<mapping class="com.Voxce.model.UserGroups"/>
+<mapping class="com.Voxce.model.StudyUsers"/>
+<mapping class="com.Voxce.model.Study_Site_Users"/>
+<mapping class="com.Voxce.model.StudyDocuments"/>
+
+<mapping class="com.Voxce.model.documents"/>
+<mapping class="com.Voxce.model.ServerConfiguration"/>
+<mapping class="com.Voxce.model.Countries"/>
+<mapping class="com.Voxce.model.Drugs"/>
+<mapping class="com.Voxce.model.Inventory"/>
+<mapping class="com.Voxce.model.Labs"/>
+<mapping class="com.Voxce.model.Laboratory"/>
+<mapping class="com.Voxce.model.UnitsOfMeasure"/>
+<mapping class="com.Voxce.model.LabNormals"/>
+<mapping class="com.Voxce.model.ActionTexts"/>
+<mapping class="com.Voxce.model.Categories"/>
+<mapping class="com.Voxce.model.QueryStatuses"/>
+<mapping class="com.Voxce.model.Resolutions"/>
+<mapping class="com.Voxce.model.QuestionTexts"/>
+<mapping class="com.Voxce.model.QuestionTypes"/>
+<mapping class="com.Voxce.model.AnswerTexts"/>
+<mapping class="com.Voxce.model.DefaultAnswerTexts"/>
+<mapping class="com.Voxce.model.ReceivedCrfStatuses"/>
+<mapping class="com.Voxce.model.DiscrepancyTexts"/>
+<mapping class="com.Voxce.model.SectionNameTexts"/>
+<mapping class="com.Voxce.model.ValidationRules"/>
+<mapping class="com.Voxce.model.Subscriber"/>
+<mapping class="com.Voxce.model.email_message"/>
+<mapping class="com.Voxce.model.Visits"/>
+<mapping class="com.Voxce.model.ProtocolVersion"/>
+<mapping class="com.Voxce.model.EnrollmentSchedule"/>
+
+<mapping class="com.Voxce.model.SubscriptionRquest"/>
+<mapping class="com.Voxce.model.Discrepancy_on_crf"/>
+<mapping class="com.Voxce.model.Patients"/>
+<mapping class="com.Voxce.model.PatientPayment"/>
+<mapping class="com.Voxce.model.PatientVisits"/>
+<mapping class="com.Voxce.model.PaymentCode"/>
+<mapping class="com.Voxce.model.PaymentSchedule"/>
+<mapping class="com.Voxce.model.VisitNameTexts"/>
+<mapping class="com.Voxce.model.StudyPayment"/>
+<mapping class="com.Voxce.model.CrfNameTexts"/>
+<mapping class="com.Voxce.model.Training"/>
+<mapping class="com.Voxce.model.TrainingUser"/>
+<mapping class="com.Voxce.model.SubmissionType"/>
+<mapping class="com.Voxce.model.Submission"/>
+<mapping class="com.Voxce.model.FinancialDisc"/>
+<mapping class="com.Voxce.model.MedicalLicense"/>
+<mapping class="com.Voxce.model.Contracts"/>
+<mapping class="com.Voxce.model.ApprovalStatusType"/>
+<mapping class="com.Voxce.model.UserCV"/>
+<mapping class="com.Voxce.model.ProtocolVersion"/>
+
+<mapping class="com.Voxce.model.Question"/>
+<mapping class="com.Voxce.model.Section"/>
+<mapping class="com.Voxce.model.CaseReportForms"/>
+<mapping class="com.Voxce.model.VisitCrfs"/>
+<mapping class="com.Voxce.model.PatientCRF"/>
+
+<mapping class="com.Voxce.model.AuditTrail"/>
+<mapping class="com.Voxce.model.ContactRequest"/>
+<mapping class="com.Voxce.model.CrfPatientData"/>
+</session-factory>
+</hibernate-configuration>	

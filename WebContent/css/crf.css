@@ -1,0 +1,28 @@
+.crf-name {
+	color:#1090D1;
+	font-family: arial;
+	font-size: 22px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+.question-heading{
+	color:graytext;
+	font-family: arial;
+	font-size: 12px;
+	font-weight: bold;
+
+}
+.section-name{
+	font-family: arial;
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+.lable-answer
+{
+	font-family: arial;
+	color:#778899;
+	font-size: 10px;
+	float: left;
+    margin: 7px 0 0 5px
+}

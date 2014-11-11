@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/study/" p:suffix=".jsp" />
+	
+	<bean id="mySitesImplementation" class="com.Voxce.DAO.SitesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mystudiesImplementation" class="com.Voxce.DAO.StudiesDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	
+	<bean id="myUsersImplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myPatientImplementation" class="com.Voxce.DAO.PatientDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myPatientVisitImplementation" class="com.Voxce.DAO.PatientVisitDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myUserImplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myUserActionImplementation" class="com.Voxce.DAO.ActionTextsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myUserQueryStatusImplementation" class="com.Voxce.DAO.QueryStatusesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	
+	<!--  This is implementation class where the business logic developed -->
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/ShowPatientIndex.pat = patientMultiController	
+				/savePatient.pat = patientMultiController
+				/editPatient.pat = patientMultiController
+				/assignPatientVisit.pat = patientMultiController
+				/PatientVisitCRF.pat = patientMultiController 
+				/PatientVisits.pat = patientMultiController
+				/updateOptimum.pat=patientMultiController
+				/savePatientCrfs.pat = patientMultiController
+				/deletePatientCrfs.pat = patientMultiController
+				/saveDiscrepancies.pat = patientMultiController
+				/visitDate.pat = patientMultiController
+				/responseOnQuery.pat = patientMultiController
+				/auditTrail.pat = patientMultiController
+				/discrepenciesInPatient.pat = patientMultiController
+				/RelatedVisitDate.pat = patientMultiController
+			</value>
+		</property>
+	</bean> 
+	
+	<bean name="patientMultiController" class="com.Voxce.Controllers.PatientController">
+	<property name="patientDAO" ref="myPatientImplementation" />
+	<property name="patientVisitDAO" ref="myPatientVisitImplementation" />
+	<property name="sitesdao" ref="mySitesImplementation" />
+	<property name="studiesdao" ref="mystudiesImplementation" />
+	<property name="useDao" ref="myUserImplementation" />
+	<property name="actionDao" ref="myUserActionImplementation" />
+	<property name="statusDao" ref="myUserQueryStatusImplementation" />
+	</bean>
+</beans>

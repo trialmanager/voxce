@@ -1,0 +1,87 @@
+/* ----------- creategroup ----------- */
+.sponsor{
+}
+
+.sponsor h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+.sponsor p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+
+}
+.sponsor label{
+display:block;
+margin-top:3px;
+color:#454444;
+height:26px; line-height:26px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+text-align:left;padding-right:10px;
+width:120px;
+float:left;
+clear:left;
+}
+
+
+.sponsor textarea{
+clear:right;
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #bebebe;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:400px;
+height:130px;
+margin:2px 0 5px 0;
+}
+
+
+.input_txt{
+clear:right;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #bebebe;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:400px;
+margin:2px 0 5px 0;
+float:left;
+}
+
+.input_txt2{
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #bebebe;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:400px;
+margin:2px 0 5px 130px;
+float:left;
+clear:left;
+}
+
+.input_txt3{
+font-size:13px;
+padding:4px 2px;
+border:solid 0 #fff;
+background-color:transparent;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:30px;
+}

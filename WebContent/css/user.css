@@ -1,0 +1,119 @@
+<!-- User Css Starts here -->
+.create_group_container{ width:100%; margin-top:10px; float:left;}
+.myform{
+	font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#454444;
+width:100%;
+padding:0;
+}
+
+.spacer{clear:both; height:1px;}
+
+/* ----------- creategroup ----------- */
+.user{
+}
+
+.user h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+.user p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+}
+.user label{
+display:block;
+margin-top:3px;
+color:#454444;
+height:26px; line-height:26px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+text-align:left; padding-right:10px;
+width:120px;
+float:left;
+clear:left;
+}
+
+
+.small{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #bebebe;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:177px;
+margin:0 0 5px 0;
+}
+
+.drop_txt{
+	clear:right;
+float:left;
+border:solid 1px #bebebe; height:26px; line-height:26px; width:408px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#454444; padding:4px 2px;
+margin:2px 0 5px 0;
+}
+
+.input_txt{
+	clear:right;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #bebebe;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:400px;
+margin:2px 0 5px 0;
+float:left;
+}
+
+.input_txt2{
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #bebebe;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:400px;
+margin:2px 0 5px 130px;
+float:left;
+clear:left;
+}
+
+.drop_txt_small{
+	clear:right;
+float:left;
+border:solid 1px #bebebe; height:26px; line-height:26px; width:158px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#454444; padding:4px 2px;
+margin:2px 0 5px 0;
+}
+
+
+.user textarea{
+	clear:right;
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #bebebe;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:400px;
+height:130px;
+margin:2px 0 5px 0;
+}
+
+.error_label_grp{ margin-left:10px; display:block; float:left; width:260px; padding:4px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#F00; height:24px; line-height:12px;}
+
+.chk_avail_yes{ margin-left:10px; display:block; float:left; width:260px; padding:4px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#090; height:18px; line-height:22px;}
+
+.chk_avail_no{ margin-left:10px; display:block; float:left; width:260px; padding:4px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#F00; height:18px; line-height:22px;}
+
+

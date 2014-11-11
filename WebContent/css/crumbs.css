@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+.crumb_left{ background-image:url(../images/breadcrumbs_left.jpg); background-repeat:no-repeat; background-position:left; height:32px; width:5px; float:left;}
+.crumb_right{ background-image:url(../images/breadcrumbs_right.jpg); background-repeat:no-repeat; background-position:left; height:32px; width:5px; float:left;}
+.crumb_mid{ background-image:url(../images/breadcrumbs_mid.jpg); background-repeat: repeat-x; line-height:32px; background-position:left; height:32px; float:left; width:98%;}
+
+
+.crumbs-user a:link{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#1090d1; display:block; padding-left:15px; padding-right:15px; line-height:32px; height:32px; float:left;   text-decoration: none;}
+.crumbs-user a:visited{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#1090d1; display:block; padding-left:15px; padding-right:15px; line-height:32px; height:32px; float:left; text-decoration: none;}
+.crumbs-user a:active{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#1090d1; display:block; padding-left:15px; padding-right:15px; line-height:32px; height:32px; float:left;  text-decoration: none;}
+.crumbs-user a:hover{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#1090d1; display:block; padding-left:15px; padding-right:15px; line-height:32px; height:32px; float:left;  text-decoration: none; }
+
+.crumbs-link a:link{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#484848; display:block; padding-left:25px; padding-right:15px; line-height:32px; height:32px; background-image:url(../images/breadcrumbs_divider.jpg); background-repeat:no-repeat; background-position:left;  float:left; text-decoration:none; white-space: nowrap; overflow:hidden; max-width: 400px;}
+.crumbs-link a:visited{ background-image:url(../images/breadcrumbs_divider.jpg); background-repeat:no-repeat; background-position:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#484848; display:block; padding-left:25px; padding-right:15px; line-height:32px; height:32px; float:left; text-decoration:none; white-space: nowrap; overflow:hidden;; max-width: 400px;}
+.crumbs-link a:active{ background-image:url(../images/breadcrumbs_divider.jpg); background-repeat:no-repeat; background-position:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#484848; display:block; padding-left:25px; padding-right:15px; line-height:32px; height:32px; float:left; text-decoration:none; white-space: nowrap; overflow: hidden; max-width: 400px;}
+.crumbs-link a:hover{ background-image:url(../images/breadcrumbs_divider.jpg); background-repeat:no-repeat; background-position:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#1090d1; display:block; padding-left:25px; padding-right:15px; line-height:32px; height:32px; float:left; text-decoration:none; white-space: nowrap; overflow: hidden; max-width: 400px;}

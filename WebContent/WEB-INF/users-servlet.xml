@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+	
+	<bean id="transactionManager"  class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	        <property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages"/>
+	</bean>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/" p:suffix=".jsp" />
+	
+	<bean id="internalPathMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver">
+		<property name="suffix" value=""/>
+	</bean>
+	
+	<bean id="myUsersImplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myCountriesImplementation" class="com.Voxce.DAO.CountriesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myLanguagesImplementation" class="com.Voxce.DAO.LanguageDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mySponsorDevisionImplementation" class="com.Voxce.DAO.SponsorDevisionDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myGroupImplementation" class="com.Voxce.DAO.GroupsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<!--  This is implementation class where the business logic developed -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/showUsersindex.users = usersMultiController
+				/SaveUser.users =  usersMultiController
+				/DeleteUser.users = usersMultiController
+				/ActiveUser.users = usersMultiController
+				/EditUser.users = usersMultiController	
+				/SaveUserGroups.users =  usersMultiController
+				/HiddenActions.users =  usersMultiController
+				/forgetPassword.users = usersMultiController
+				/resetPasswordUser.users = usersMultiController
+				/showresetPasswordUser.users = usersMultiController
+				/ShowAccountSetting.users = usersMultiController
+				/editAccountSetting.users = usersMultiController
+				/uniqueUsername.users = usersMultiController
+				/uniqueEmail.users = usersMultiController
+				/resetPassword.users = usersMultiController
+				/viewPasswordReset.users = usersMultiController
+				/uniqueEmailSub.users = usersMultiController
+			</value>
+		</property>
+	</bean> 
+	
+	<bean name="usersMultiController" class="com.Voxce.Controllers.UsersController">
+		<property name="usersdao" ref="myUsersImplementation" /> 
+		<property name="countriesDAO" ref="myCountriesImplementation" />
+		<property name="languageDAO" ref="myLanguagesImplementation" />
+		<property name="sponsordevisionDAO" ref="mySponsorDevisionImplementation" />
+		<property name="methodNameResolver" ref="internalPathMethodNameResolver"/>
+		<property name="groupDAO" ref="myGroupImplementation" />
+	</bean>
+	
+</beans>

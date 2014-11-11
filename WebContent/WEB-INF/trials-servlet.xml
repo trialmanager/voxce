@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/" p:suffix=".jsp" />
+	
+	
+	<bean id="myApprovalTypeImplementation" class="com.Voxce.DAO.ApprovalStatusTypeDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mySubmissionTypeImplementation" class="com.Voxce.DAO.SubmissionTypeDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myTrainingTypeImplementation" class="com.Voxce.DAO.TrainingDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myUserCVImplementation" class="com.Voxce.DAO.UserCVDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myTrainingUserImplementation" class="com.Voxce.DAO.TrainingUserDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myUsersImplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myStudyImplementation" class="com.Voxce.DAO.StudiesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mySiteListImplementation" class="com.Voxce.DAO.SitesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mySubmissionImplementation" class="com.Voxce.DAO.SubmissionDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myContractsImplementation" class="com.Voxce.DAO.ContractsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myMedicalLicenseImplementation" class="com.Voxce.DAO.MedicalLicenseDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myFinancialDisclosureImplementation" class="com.Voxce.DAO.FinancialDiscDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	 
+	 <bean id="myCountriesImplementation" class="com.Voxce.DAO.CountriesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	
+	<!--  This is implementation class where the business logic developed -->
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/ShowTrials.trial = trialMultiController	
+				/CreateApprovalStatusType.trial = trialMultiController
+				/DeleteContract.trial = trialMultiController
+				/CreateSubmissionType.trial = trialMultiController	
+				/CreateTraining.trial = trialMultiController
+				/CreateUserCV.trial = trialMultiController	
+				/TrainingUser.trial = trialMultiController
+				/CreateSubmission.trial = trialMultiController
+				/CreateMedicalLicense.trial = trialMultiController
+				/CreateContract.trial = trialMultiController
+				/CreateFinancialDisclosure.trial = trialMultiController
+				/SubmitUserCV.trial = trialMultiController	
+				/UploadTrainingUser.trial = trialMultiController
+				/UploadContract.trial = trialMultiController
+				/UploadFinancialDisc.trial = trialMultiController
+				/UploadMedicalLicense.trial = trialMultiController
+				/UploadSubmissions.trial = trialMultiController
+				/DownloadDocumentUseCV.trial = trialMultiController
+				/DownloadDocumentTraining.trial = trialMultiController
+				/DownloadDocumentSubmission.trial = trialMultiController
+				/DownloadDocumentMedical.trial = trialMultiController
+				/DownloadDocumentFinancial.trial = trialMultiController
+				/DownloadDocumentContract.trial = trialMultiController
+				/ShowSubmissionType.trial = trialMultiController
+				/ShowTrainingType.trial = trialMultiController
+				/ShowUserCV.trial = trialMultiController
+				/ShowFinancialDisc.trial = trialMultiController
+				/ShowContracts.trial = trialMultiController
+				/ShowMedicalLicense.trial = trialMultiController
+				/ShowSubmission.trial = trialMultiController
+				/ShowTrainingUser.trial = trialMultiController
+			</value>
+		</property>
+	</bean> 
+	
+	<bean name="trialMultiController" class="com.Voxce.Controllers.TrialsController">
+	<property name="approvalStatusTypeDAO" ref="myApprovalTypeImplementation" />
+	<property name="submissionTypeDAO" ref="mySubmissionTypeImplementation" />
+	<property name="trainingDAO" ref="myTrainingTypeImplementation" />
+	<property name="userCVDAO" ref="myUserCVImplementation" />
+	<property name="trainingUserDAO" ref="myTrainingUserImplementation" />
+	<property name="usersDAO" ref="myUsersImplementation" /> 
+	<property name="sitesDAO" ref="mySiteListImplementation"/>
+	<property name="studiesDAO" ref="myStudyImplementation" /> 
+	<property name="submissionDAO" ref="mySubmissionImplementation" /> 
+	<property name="contractsDAO" ref="myContractsImplementation" />
+	<property name="medicalLicenseDAO" ref="myMedicalLicenseImplementation" />  
+	<property name="financialDiscDAO" ref="myFinancialDisclosureImplementation" />
+	<property name="countriesDAO" ref="myCountriesImplementation" />
+	</bean>
+</beans>

@@ -1,0 +1,283 @@
+button::-moz-focus-inner {
+  border: 0; }
+
+
+button.blue-pill {
+  background-color: #0c7bb4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2da7e6), to(#0c7bb4));
+  /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -moz-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -ms-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -o-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: linear-gradient(top, #2da7e6, #0c7bb4);
+	
+
+  border-top: 1px solid #056fa6;
+  border-right: 1px solid #056fa6;
+  border-bottom: 1px solid #056fa6;
+  border-left: 1px solid #056fa6;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: #fff;
+  font: bold 11px "Arial";
+  line-height: 1;
+  padding:8px;
+  text-align: center;
+  text-transform: uppercase; }
+  
+  
+  button.blue-pill:hover {
+    background-color: #96b4f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0c7bb4), to(#2da7e6));
+    /* Saf4+, Chrome */
+	  background-image: -webkit-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -moz-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -ms-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -o-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: linear-gradient(top, #0c7bb4, #2da7e6);
+  
+    border-top: 1px solid #056fa6;
+    border-right: 1px solid #056fa6;
+    border-bottom: 1px solid #056fa6;
+    border-left: 1px solid #056fa6;
+	color:#ffffff;
+    cursor: pointer; }
+	
+	
+  button.blue-pill:active {
+    border: 1px solid #056fa6;
+    -webkit-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -moz-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -ms-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -o-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4; }
+	
+	
+	
+	button.grey-pill {
+  background-color: #d4d4d4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d4d4d4), to(#9f9f9f));
+  /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #d4d4d4, #9f9f9f);
+    background-image: -moz-linear-gradient(top, #d4d4d4, #9f9f9f);
+    background-image: -ms-linear-gradient(top, #d4d4d4, #9f9f9f);
+    background-image: -o-linear-gradient(top, #d4d4d4, #9f9f9f);
+    background-image: linear-gradient(top, #d4d4d4, #9f9f9f);
+	
+
+  border-top: 1px solid #929191;
+  border-right: 1px solid #929191;
+  border-bottom: 1px solid #929191;
+  border-left: 1px solid #929191;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: #fff;
+  font: bold 11px "Arial";
+  line-height: 1;
+  padding:8px;
+  text-align: center;
+  text-transform: uppercase; }
+  
+  
+  button.grey-pill:hover {
+    background-color: #9f9f9f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#9f9f9f), to(#d4d4d4));
+    /* Saf4+, Chrome */
+	  background-image: -webkit-linear-gradient(top, #9f9f9f, #d4d4d4);
+  background-image: -moz-linear-gradient(top, #9f9f9f, #d4d4d4);
+  background-image: -ms-linear-gradient(top, #9f9f9f, #d4d4d4);
+  background-image: -o-linear-gradient(top, #9f9f9f, #d4d4d4);
+  background-image: linear-gradient(top, #9f9f9f, #d4d4d4);
+  
+    border-top: 1px solid #929191;
+    border-right: 1px solid #929191;
+    border-bottom: 1px solid #929191;
+    border-left: 1px solid #929191;
+	color:#fff;
+    cursor: pointer; }
+	
+	
+  button.grey-pill:active {
+    border: 1px solid #929191;
+    -webkit-box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee;
+    -moz-box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee;
+    -ms-box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee;
+    -o-box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee;
+    box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee; }
+	
+	
+  
+  
+  
+  
+  input[type=button].blue-pill {
+  background-color: #0c7bb4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2da7e6), to(#0c7bb4));
+  /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -moz-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -ms-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -o-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: linear-gradient(top, #2da7e6, #0c7bb4);
+	
+
+  border-top: 1px solid #056fa6;
+  border-right: 1px solid #056fa6;
+  border-bottom: 1px solid #056fa6;
+  border-left: 1px solid #056fa6;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: #fff;
+  font: bold 11px "Arial";
+  line-height: 1;
+  padding:8px;
+  text-align: center;
+  text-transform: uppercase; }
+  
+  
+  input[type=button].blue-pill:hover {
+    background-color: #96b4f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0c7bb4), to(#2da7e6));
+    /* Saf4+, Chrome */
+	  background-image: -webkit-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -moz-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -ms-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -o-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: linear-gradient(top, #0c7bb4, #2da7e6);
+  
+    border-top: 1px solid #056fa6;
+    border-right: 1px solid #056fa6;
+    border-bottom: 1px solid #056fa6;
+    border-left: 1px solid #056fa6;
+	color:#ffffff;
+    cursor: pointer; }
+	
+	
+ input[type=button].blue-pill:active {
+    border: 1px solid #056fa6;
+    -webkit-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -moz-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -ms-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -o-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4; }
+  
+  
+  input[type=button].grey-pill {
+  background-color: #d4d4d4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d4d4d4), to(#9f9f9f));
+  /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #d4d4d4, #9f9f9f);
+    background-image: -moz-linear-gradient(top, #d4d4d4, #9f9f9f);
+    background-image: -ms-linear-gradient(top, #d4d4d4, #9f9f9f);
+    background-image: -o-linear-gradient(top, #d4d4d4, #9f9f9f);
+    background-image: linear-gradient(top, #d4d4d4, #9f9f9f);
+	
+
+  border-top: 1px solid #929191;
+  border-right: 1px solid #929191;
+  border-bottom: 1px solid #929191;
+  border-left: 1px solid #929191;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: #fff;
+  font: bold 11px "Arial";
+  line-height: 1;
+  padding:8px;
+  text-align: center;
+  text-transform: uppercase; }
+  
+  input[type=button].grey-pill:hover {
+    background-color: #9f9f9f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#9f9f9f), to(#d4d4d4));
+    /* Saf4+, Chrome */
+	  background-image: -webkit-linear-gradient(top, #9f9f9f, #d4d4d4);
+  background-image: -moz-linear-gradient(top, #9f9f9f, #d4d4d4);
+  background-image: -ms-linear-gradient(top, #9f9f9f, #d4d4d4);
+  background-image: -o-linear-gradient(top, #9f9f9f, #d4d4d4);
+  background-image: linear-gradient(top, #9f9f9f, #d4d4d4);
+  
+    border-top: 1px solid #929191;
+    border-right: 1px solid #929191;
+    border-bottom: 1px solid #929191;
+    border-left: 1px solid #929191;
+	color:#fff;
+    cursor: pointer; }
+	
+	
+  input[type=button].grey-pill:active {
+    border: 1px solid #929191;
+    -webkit-box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee;
+    -moz-box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee;
+    -ms-box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee;
+    -o-box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee;
+    box-shadow: inset 0 0 8px 2px #d4d4d4, 0 1px 0 0 #eee; }
+    
+    
+    
+    input[type=submit].blue-pill {
+  background-color: #0c7bb4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2da7e6), to(#0c7bb4));
+  /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -moz-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -ms-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: -o-linear-gradient(top, #2da7e6, #0c7bb4);
+    background-image: linear-gradient(top, #2da7e6, #0c7bb4);
+	
+
+  border-top: 1px solid #056fa6;
+  border-right: 1px solid #056fa6;
+  border-bottom: 1px solid #056fa6;
+  border-left: 1px solid #056fa6;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: #fff;
+  font: bold 11px "Arial";
+  line-height: 1;
+  padding:8px;
+  text-align: center;
+  text-transform: uppercase; }
+  
+  
+  input[type=submit].blue-pill:hover {
+    background-color: #96b4f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0c7bb4), to(#2da7e6));
+    /* Saf4+, Chrome */
+	  background-image: -webkit-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -moz-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -ms-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: -o-linear-gradient(top, #0c7bb4, #2da7e6);
+  background-image: linear-gradient(top, #0c7bb4, #2da7e6);
+  
+    border-top: 1px solid #056fa6;
+    border-right: 1px solid #056fa6;
+    border-bottom: 1px solid #056fa6;
+    border-left: 1px solid #056fa6;
+	color:#ffffff;
+    cursor: pointer; }
+	
+	
+ input[type=submit].blue-pill:active {
+    border: 1px solid #056fa6;
+    -webkit-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -moz-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -ms-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    -o-box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4;
+    box-shadow: inset 0 0 8px 2px #2da7e6, 0 1px 0 0 #0c7bb4; }
+  

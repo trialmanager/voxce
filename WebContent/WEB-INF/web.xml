@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>VOXCE</display-name>
+  <welcome-file-list>
+    <welcome-file>redirect.jsp</welcome-file>
+  </welcome-file-list>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  <error-page>
+    <exception-type>java.lang.IndexOutOfBoundsException</exception-type>
+    <location>/login.htm</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.IllegalStateException</exception-type>
+    <location>/login.htm</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.NullPointerException</exception-type>
+    <location>/login.htm</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.NumberFormatException</exception-type>
+    <location>/login.htm</location>
+  </error-page>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+    				 /WEB-INF/dispatcher-servlet.xml,
+    				 /WEB-INF/group-servlet.xml,
+    				 /WEB-INF/users-servlet.xml,
+    				 /WEB-INF/sponsor-servlet.xml
+    				 /WEB-INF/home-servlet.xml
+    				 /WEB-INF/study-servlet.xml    				 
+    				 /WEB-INF/labs-servlet.xml,
+    				 /WEB-INF/drugs-servlet.xml,
+    				 /WEB-INF/inventory-servlet.xml,
+    				 /WEB-INF/laboratory-servlet.xml,
+					 /WEB-INF/unitsofmeasure-servlet.xml,
+    				 /WEB-INF/countries-servlet.xml,    				 
+    				 /WEB-INF/categories-servlet.xml,
+    				 /WEB-INF/actiontexts-servlet.xml,
+    				 /WEB-INF/querystatuses-servlet.xml,
+    				 /WEB-INF/resolutions-servlet.xml,
+    				 /WEB-INF/questiontexts-servlet.xml,
+    				 /WEB-INF/questiontypes-servlet.xml,
+    				 /WEB-INF/answertexts-servlet.xml,
+    				 /WEB-INF/defaultanswertexts-servlet.xml,
+    				 /WEB-INF/receivedcrfstatuses-servlet.xml,
+    				 /WEB-INF/discrepancytexts-servlet.xml,
+    				 /WEB-INF/sectionnametexts-servlet.xml,
+    				 /WEB-INF/validationrules-servlet.xml
+    		</param-value>
+  </context-param>
+  <listener>
+    <listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dispatcher</servlet-name>
+    <url-pattern>*.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>reports</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reports</servlet-name>
+    <url-pattern>*.report</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>home</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>home</servlet-name>
+    <url-pattern>*.home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>study</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>study</servlet-name>
+    <url-pattern>*.study</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>group</servlet-name>
+    <servlet-class> org.springframework.web.servlet.DispatcherServlet </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>group</servlet-name>
+    <url-pattern>*.groups</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>users</servlet-name>
+    <servlet-class> org.springframework.web.servlet.DispatcherServlet </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>users</servlet-name>
+    <url-pattern>*.users</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>sponsor</servlet-name>
+    <servlet-class> org.springframework.web.servlet.DispatcherServlet </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sponsor</servlet-name>
+    <url-pattern>*.spondiv</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>sites</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sites</servlet-name>
+    <url-pattern>*.sites</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>countries</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>countries</servlet-name>
+    <url-pattern>*.countries</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>labs</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>labs</servlet-name>
+    <url-pattern>*.labs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>drugs</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>drugs</servlet-name>
+    <url-pattern>*.drugs</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>inventory</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>inventory</servlet-name>
+    <url-pattern>*.inventory</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>laboratory</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>laboratory</servlet-name>
+    <url-pattern>*.laboratory</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>unitsofmeasure</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>unitsofmeasure</servlet-name>
+    <url-pattern>*.unitsofmeasure</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>actiontexts</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>actiontexts</servlet-name>
+    <url-pattern>*.actiontexts</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>categories</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>categories</servlet-name>
+    <url-pattern>*.categories</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>querystatuses</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>querystatuses</servlet-name>
+    <url-pattern>*.querystatuses</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>resolutions</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>resolutions</servlet-name>
+    <url-pattern>*.resolutions</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>questiontexts</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>questiontexts</servlet-name>
+    <url-pattern>*.questiontexts</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>questiontypes</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>questiontypes</servlet-name>
+    <url-pattern>*.questiontypes</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>answertexts</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>answertexts</servlet-name>
+    <url-pattern>*.answertexts</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>defaultanswertexts</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>defaultanswertexts</servlet-name>
+    <url-pattern>*.defaultanswertexts</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>discrepancytexts</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>discrepancytexts</servlet-name>
+    <url-pattern>*.discrepancytexts</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>receivedcrfstatuses</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>receivedcrfstatuses</servlet-name>
+    <url-pattern>*.receivedcrfstatuses</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>sectionnametexts</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sectionnametexts</servlet-name>
+    <url-pattern>*.sectionnametexts</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>validationrules</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>validationrules</servlet-name>
+    <url-pattern>*.validationrules</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>crf</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>crf</servlet-name>
+    <url-pattern>*.crf</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>visits</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>visits</servlet-name>
+    <url-pattern>*.visits</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>admin</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>admin</servlet-name>
+    <url-pattern>*.adm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>patient</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>patient</servlet-name>
+    <url-pattern>*.pat</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>payment</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>payment</servlet-name>
+    <url-pattern>*.pay</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>trials</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>trials</servlet-name>
+    <url-pattern>*.trial</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <display-name>Eclipse BIRT Report Viewer</display-name>
+
+	<!-- Default locale setting.
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_LOCALE</param-name>
+		<param-value>en-US</param-value>
+	</context-param>
+
+	<!-- 
+		Default timezone setting.
+		Examples: "Europe/Paris", "GMT+1".
+		Defaults to the container's timezone.		
+	 -->
+	<context-param>
+		<param-name>BIRT_VIEWER_TIMEZONE</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!--
+		Report resources directory for preview. Defaults to ${birt home}
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_WORKING_FOLDER</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!--
+		Temporary document files directory. Defaults to ${birt home}/documents
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_DOCUMENT_FOLDER</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!--
+		Flag whether the report resources can only be accessed under the
+		working folder. Defaults to true
+	-->
+	<context-param>
+		<param-name>WORKING_FOLDER_ACCESS_ONLY</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!--
+		Settings for how to deal with the url report path. e.g. "http://host/repo/test.rptdesign". 
+		
+		Following values are supported:
+		
+		<all> 		- All paths.
+		<domain>	- Only the paths with host matches current domain. Note the comparison is literal, "127.0.0.1" and "localhost" are considered as different hosts.
+		<none> 		- URL paths are not supported.
+		
+		Defaults to "domain".
+	-->
+	<context-param>
+		<param-name>URL_REPORT_PATH_POLICY</param-name>
+		<param-value>domain</param-value>
+	</context-param>
+
+	<!--
+		Temporary image/chart directory. Defaults to ${birt home}/report/images
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_IMAGE_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Engine log directory. Defaults to ${birt home}/logs -->
+	<context-param>
+		<param-name>BIRT_VIEWER_LOG_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Report engine log level -->
+	<context-param>
+		<param-name>BIRT_VIEWER_LOG_LEVEL</param-name>
+		<param-value>WARNING</param-value>
+	</context-param>
+
+	<!--
+		Directory where to store all the birt report script libraries (JARs).
+		Defaults to ${birt home}/scriptlib
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_SCRIPTLIB_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!-- Resource location directory. Defaults to ${birt home} -->
+	<context-param>
+		<param-name>BIRT_RESOURCE_PATH</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Preview report rows limit. An empty value means no limit. -->
+	<context-param>
+		<param-name>BIRT_VIEWER_MAX_ROWS</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!--
+		Max cube fetch levels limit for report preview (Only used when
+		previewing a report design file using the preview pattern)
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_MAX_CUBE_ROWLEVELS</param-name>
+		<param-value></param-value>
+	</context-param>
+	<context-param>
+		<param-name>BIRT_VIEWER_MAX_CUBE_COLUMNLEVELS</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Memory size in MB for creating a cube. -->
+	<context-param>
+		<param-name>BIRT_VIEWER_CUBE_MEMORY_SIZE</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Defines the BIRT viewer configuration file -->
+	<context-param>
+		<param-name>BIRT_VIEWER_CONFIG_FILE</param-name>
+		<param-value>WEB-INF/viewer.properties</param-value>
+	</context-param>
+
+	<!--
+		Flag whether to allow server-side printing. Possible values are "ON"
+		and "OFF". Defaults to "ON".
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_PRINT_SERVERSIDE</param-name>
+		<param-value>ON</param-value>
+	</context-param>
+
+	<!--
+		Flag whether to force browser-optimized HTML output. Defaults to true
+	-->
+	<context-param>
+		<param-name>HTML_ENABLE_AGENTSTYLE_ENGINE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!--
+		Filename generator class/factory to use for the exported reports.
+	-->
+	<context-param>
+		<param-name>BIRT_FILENAME_GENERATOR_CLASS</param-name>
+		<param-value>org.eclipse.birt.report.utility.filename.DefaultFilenameGenerator</param-value>
+	</context-param>
+
+	<!--
+		Viewer Filter used to set the request character encoding to UTF-8.
+	-->
+	<filter>
+    	<filter-name>ViewerFilter</filter-name>
+        <filter-class>org.eclipse.birt.report.filter.ViewerFilter</filter-class>
+	</filter>
+    <filter-mapping>
+        <filter-name>ViewerFilter</filter-name>
+        <servlet-name>ViewerServlet</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ViewerFilter</filter-name>
+        <servlet-name>EngineServlet</servlet-name>
+    </filter-mapping>
+    				
+	<!-- Viewer Servlet Context Listener -->
+	<listener>
+		<listener-class>org.eclipse.birt.report.listener.ViewerServletContextListener</listener-class>
+	</listener>
+
+	<!-- Viewer HttpSession Listener -->
+	<listener>
+		<listener-class>org.eclipse.birt.report.listener.ViewerHttpSessionListener</listener-class>
+	</listener>
+	
+	<!-- Viewer Servlet, Supports SOAP -->
+	<servlet>
+		<servlet-name>ViewerServlet</servlet-name>
+		<servlet-class>org.eclipse.birt.report.servlet.ViewerServlet</servlet-class>
+	</servlet>
+
+	<!-- Engine Servlet -->
+	<servlet>
+		<servlet-name>EngineServlet</servlet-name>
+		<servlet-class>org.eclipse.birt.report.servlet.BirtEngineServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ViewerServlet</servlet-name>
+		<url-pattern>/frameset</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ViewerServlet</servlet-name>
+		<url-pattern>/run</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/preview</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/parameter</url-pattern>
+	</servlet-mapping>	
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/document</url-pattern>
+	</servlet-mapping>	
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/output</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/extract</url-pattern>
+	</servlet-mapping>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/birt.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/birt.tld</taglib-location>
+		</taglib>
+	</jsp-config>		
+</web-app>

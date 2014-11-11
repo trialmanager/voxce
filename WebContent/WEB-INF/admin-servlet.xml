@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/" p:suffix=".jsp" />
+
+	
+	
+	<bean id="myAdminImplementation" class="com.Voxce.DAO.AdminDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myCountImplementation" class="com.Voxce.DAO.CountriesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myLanguageImplementation" class="com.Voxce.DAO.LanguageDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myUsersImplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="mycontactRequestImplementation" class="com.Voxce.DAO.ContactRequestDAO">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+					/ShowControlPanle.adm = amdMultiController
+					/ShowLoginAsSubscriber.adm = amdMultiController
+					/showSuperAdmin.adm = amdMultiController
+					/SaveADMUser.adm  = amdMultiController
+					/ActiveSuperAdminUser.adm = amdMultiController
+					/InactiveUserSuperAdminUser.adm = amdMultiController
+					/EditUser.adm = amdMultiController
+					/viewResetPassword.adm =  amdMultiController
+					/resetPassword.adm = amdMultiController
+					/applySubscription.adm = amdMultiController
+					/ActiveSubscription.adm = amdMultiController
+					/sendcontactRequests.adm=amdMultiController
+					/saveContactRequest.adm=amdMultiController
+					/viewcontactRequests.adm=amdMultiController
+					/ShowAdminIndex.adm=amdMultiController
+					
+			</value>
+		</property>
+	</bean> 
+	
+	<bean name="amdMultiController" class="com.Voxce.Controllers.AdminController">
+		<property name="adminDAO" ref="myAdminImplementation"/>
+		<property name="countriesDAO" ref="myCountImplementation"/>
+		<property name="languageDAO" ref="myLanguageImplementation"/>
+		<property name="usersdao" ref="myUsersImplementation"/>
+		<property name="contactdao" ref="mycontactRequestImplementation"></property>
+	</bean>
+
+
+</beans>

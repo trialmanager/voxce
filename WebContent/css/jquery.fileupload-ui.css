@@ -1,0 +1,73 @@
+div.file_upload_highlight {
+  background: lawngreen;
+}
+
+div.file_upload input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  border: 300px solid transparent;
+ 
+}
+
+.file_upload button {
+   background-color :transparent;
+ 	background-repeat:no-repeat;	
+
+
+  border-top: 1px solid #056fa6;
+  border-right: 1px solid #056fa6;
+  border-bottom: 1px solid #056fa6;
+  border-left: 1px solid #056fa6;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: #fff;
+  font: bold 11px "Arial";
+  line-height: 1;
+  padding:8px;
+  text-align: center;
+  text-transform: uppercase; 
+}
+
+.file_upload iframe, .file_upload button {
+   background-color:transparent;
+  background-repeat:no-repeat;
+  /* Saf4+, Chrome */
+
+  border-top: 1px solid #056fa6;
+  border-right: 1px solid #056fa6;
+  border-bottom: 1px solid #056fa6;
+  border-left: 1px solid #056fa6;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: #fff;
+  font: bold 11px "Arial";
+  line-height: 1;
+  padding:8px;
+  text-align: center;
+  text-transform: uppercase; 
+}
+
+.file_upload_preview img {
+  width: 80px;
+}
+
+.file_upload_progress .ui-progressbar-value {
+  background: url(../images/pbar-ani.gif);
+}
+
+.file_upload_progress div {
+  width: 150px;
+  height: 15px;
+}
+
+.file_upload_cancel button {
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ margin:0;}
+
+.popup_wrapper{ margin:0 auto; width:500px; border:solid 5px #dedede; padding:10px;}
+h1{ line-height:30px; margin:0; padding:0; border-bottom:solid 1px #e9e9e9; font-weight:normal; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#158ebb; margin-bottom:10px;}
+.form_section{ width:100%; margin:0 auto; overflow:auto;}
+.form_section label{ width:100%;color:#454444; float:left;
+height:26px; line-height:26px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;}
+.form_btn{ float:left; margin-top:10px; clear:both;}
+.floating{ float:left; clear:both;}
+.input_txt{
+	clear:right;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #bebebe;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#454444;
+height:18px;
+width:400px;
+margin:2px 0 5px 0;
+float:left;}
+
+.excell_ico{ float:left; display:block; width:31px; height:31px; margin-right:10px;}
+
+a.main_btn1{ width:193px; height:122px; margin-right:15px; float:left; display:block; background-image:url(../images/excell_upload_def.png); background-repeat:no-repeat;}
+a.main_btn1:hover{ width:193px; height:122px; margin-right:15px; float:left; display:block; background-image:url(../images/excell_upload_hov.png); background-repeat:no-repeat;}
+
+a.main_btn2{ width:193px; height:122px; margin-right:15px; float:left; display:block; background-image:url(../images/webservice_up_def.png); background-repeat:no-repeat;}
+a.main_btn2:hover{ width:193px; height:122px; margin-right:15px; float:left; display:block; background-image:url(../images/webservice_up_hov.png); background-repeat:no-repeat;}
+
+a.main_btn3{ width:193px; height:122px; margin-right:15px; float:left; display:block; background-image:url(../images/db_conn_def.png); background-repeat:no-repeat;}
+a.main_btn3:hover{ width:193px; height:122px; margin-right:15px; float:left; display:block; background-image:url(../images/db_conn_hov.png); background-repeat:no-repeat;}
+

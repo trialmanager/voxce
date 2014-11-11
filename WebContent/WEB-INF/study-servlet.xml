@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+		
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/study/" p:suffix=".jsp" />
+	
+	
+	
+	<bean id="myprotocolImplementation" class="com.Voxce.DAO.protocolVersionDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mySitesImplementation" class="com.Voxce.DAO.SitesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mystudiesImplementation" class="com.Voxce.DAO.StudiesDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="mySponsorImplementation" class="com.Voxce.DAO.SponsorDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mystudysiteImplementation" class="com.Voxce.DAO.StudySitesDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>	
+	
+	<bean id="myUsersImplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="myDocumentsImplementation" class="com.Voxce.DAO.DocumentsDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="myCountriesImplementation" class="com.Voxce.DAO.CountriesDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="myLaborortoriesImplementation" class="com.Voxce.DAO.LaboratoryDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/AddProtocol.study= studyController
+			
+				/ViewStudy.study = studyController
+				/OpenViewStudy.study = studyController
+				/OpenEnrollmentScheduleStudy.study = studyController
+				
+				/OpenChangeStudy.study = studyController
+				/OpenUsersStudy.study = studyController
+				/DeleteUserStudy.study= studyController
+				OpenViewStudyInvestigators.study = studyController
+				/OpenViewStudyDetail.study= studyController
+				/OpenStudyDocuments.study= studyController
+				/uploaddocument.study= studyController
+				/DeleteDocument.study= studyController
+				/DownloadDocument.study = studyController
+				/OpenEnrollmentStudy.study = studyController
+				/OpenStudySite.study= studyController
+				/OpenStudySitePatient.study = studyController
+				/OpenStudySiteDetail.study= studyController
+				/OpenStudySiteChange.study= studyController
+				/OpenStudySiteInvestigators.study= studyController
+				/OpenStudySiteLaborotories.study= studyController
+				/OpenStudySiteDocuments.study= studyController
+				/OpenStudySiteUsers.study= studyController
+				/OpenViewStudyLaboratory.study = studyController
+				/OpenStudySiteLaborotories.study = studyController
+				/uploadSitedocument.study = studyController
+				/DownloadSiteDocument.study = studyController
+				/DeleteSiteDocument.study = studyController
+				/OpenStudySiteDocuments.study = studyController
+				
+				/EditStudy.study = studyController
+				/SaveEnrollment.study= studyController
+				/GetEnrollmentStudy.study= studyController
+				
+				/EditSiteDetail.study= studyController
+				
+				/discrepenciesInStudy.study = studyController
+				/discrepenciesInSite.study=studyController
+			</value>
+		</property>
+	</bean> 																			
+	
+	<bean name="studyController" class="com.Voxce.Controllers.StudyController">
+		<property name="sitesDAO" ref="mySitesImplementation" />
+		<property name="studiesdao" ref="mystudiesImplementation" />
+		<property name="studysiteDAO" ref="mystudysiteImplementation" />
+		<property name="sponsorDAO" ref="mySponsorImplementation" /> 
+		<property name="usersdao" ref="myUsersImplementation" />
+		<property name="documentsdao" ref="myDocumentsImplementation" />
+		<property name="laboratoryDAO" ref="myLaborortoriesImplementation" />
+		<property name="countriesDAO" ref="myCountriesImplementation" />
+		<property name="protocolDAO" ref="myprotocolImplementation" />
+	</bean>
+
+</beans>

@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+.container {
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	position: relative;
+}
+
+/* Real subscribe css starts here */
+.container_left {
+	float: left;
+	width: 450px;
+}
+
+.container_left label {
+	display: block;
+	margin-top: 3px;
+	color: #454444;
+	height: 26px;
+	line-height: 26px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	padding-right: 10px;
+	width: 90px;
+	float: left;
+	clear: left;
+}
+
+.input_txt_sub {
+	font-size: 12px;
+	padding: 4px 2px;
+	border: solid 1px #bebebe;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #454444;
+	height: 18px;
+	width: 250px;
+	margin: 2px 0 5px 0;
+	float: left;
+}
+
+.error_label_grp_sub {
+	margin-left: 100px;
+	display: block;
+	float: left;
+	width: 250px;
+	padding: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #F00;
+	height: 10px;
+	line-height: 10px;
+}
+
+.drop_txt_sub {
+	float: left;
+	border: solid 1px #bebebe;
+	height: 26px;
+	line-height: 26px;
+	width: 258px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #454444;
+	padding: 4px 2px;
+	margin: 2px 0 5px 0;
+}
+
+.sub_buttons {
+	clear: both;
+	float: left;
+	padding-left: 100px;
+	margin-top: 20px;
+	width: 900px;
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages"/>
+	</bean>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/" p:suffix=".jsp" />
+		
+	<bean id="internalPathMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver">
+		<property name="suffix" value="Handler"/>
+	</bean>
+		
+	<bean id="myLoginImplementation" class="com.Voxce.DAO.VoxceDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="myLogoutmplementation" class="com.Voxce.DAO.UsersDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id = "myLoginGroupImplimentation" class = "com.Voxce.DAO.GroupsDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	<bean id="myCountryImplementation" class="com.Voxce.DAO.CountriesDAO">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean id="myLanguageImplementation" class="com.Voxce.DAO.LanguageDAO">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	
+	<!--  This is implementation class where the business logic developed -->
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/login.htm = loginMultiController
+				/LoginUser.htm = loginMultiController
+				/Logout.htm = loginMultiController
+				/AdminLogInASsubcriber.htm = loginMultiController
+				/singUp.htm=loginMultiController
+			</value>
+		</property>
+	</bean> 
+	
+	<bean name="loginMultiController" class="com.Voxce.Controllers.VoxceController">
+		<property name="ctmsdao" ref="myLoginImplementation" />
+		<property name="usersDAO" ref="myLogoutmplementation" />
+		<property name="groupsDAO" ref = "myLoginGroupImplimentation"/>
+		<property name="methodNameResolver" ref="internalPathMethodNameResolver"/>
+		<property name="countriesDAO" ref="myCountryImplementation"></property>
+		<property name="languageDAO" ref="myLanguageImplementation"></property>
+	</bean>
+</beans>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+		
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:prefix="/jsp/" p:suffix=".jsp" />
+	
+	<bean id="internalPathMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver">
+		<property name="suffix" value="Handler"/>
+	</bean>
+	
+	<bean id="myprotocolImplementation" class="com.Voxce.DAO.protocolVersionDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mystudiesImplementation" class="com.Voxce.DAO.StudiesDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="myLanguagesImplementation" class="com.Voxce.DAO.LanguageDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean id="mystudysiteImplementation" class="com.Voxce.DAO.StudySitesDAO">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<bean id="mySponsorImplementation" class="com.Voxce.DAO.SponsorDAO">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/ShowHomeIndex.home = homeController
+				/CreateStudy.home = homeController
+				/CreateSubStudy.home = homeController
+				/CheckStudy.home=homeController
+			</value>
+		</property>
+	</bean> 																			
+	
+	<bean name="homeController" class="com.Voxce.Controllers.HomeController">
+		<property name="studiesdao" ref="mystudiesImplementation" />
+		<property name="languageDAO" ref="myLanguagesImplementation" />
+		<property name="sponsorDAO" ref="mySponsorImplementation" />
+		<property name="protocolDAO" ref="myprotocolImplementation" />
+	</bean>
+
+</beans>
